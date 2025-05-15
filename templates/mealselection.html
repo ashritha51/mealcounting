@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            width: 200px;
+        }
+
+        button[name="meal_type"][value="nonveg"] {
+            background-color: #dc3545;
+        }
+
+        button:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            button {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Meal Selection</h1>
+    <h3>Select Your Meal</h3>
+    
+    <form action="/select_meal" method="POST">
+        <button type="submit" name="meal_type" value="veg">Veg Meal</button>
+        <button type="submit" name="meal_type" value="nonveg">Non-Veg Meal</button>
+    </form>
+</body>
+</html>
